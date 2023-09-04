@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //화면 로드 시 3초후에 "안녕하세요" alert창 띄우기(일반함수)
+    //화면 로드 시 6초후에 "안녕하세요" alert창 띄우기(익명함수)
+    //화면 로드 시 10초후에 "안녕하세요" alert창 띄우기(화살표함수)
+    function time(){
+        alert("안녕하세요");
+        console.log(1);
+    }
+    setTimeout(time, 3000); // 일반함수
+
+    setTimeout(function (){
+        alert("안녕하세요");
+        console.log(2);
+    }, 6000); // 익명함수
+
+    setTimeout(()=>{alert("안녕하세요"); console.log(3);}, 9000); 
+    // 화살표함수
+    
+</script>

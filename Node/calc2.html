@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //Calc 클래스 생성
+    //max(arr), min(arr) 함수 생성
+    //모든 함수는 static 
+    //var arr = [3,5,6,2,4];
+    //console.log(Calc.max(arr)); // 6
+    //console.log(Calc.max(arr)); // 2
+    var arr = [3,5,6,2,4];
+
+    class Calc {
+        static max(arr){
+            var value = arr[0];
+            for(var i = 1; i < arr.length; i++){
+                value = Math.max(value, arr[i]);                
+             }
+            return value;
+            
+        }
+         
+        static min(arr){
+            var value = arr[0];
+            for(var i = 1; i<arr.length; i++){
+                value = Math.min(value, arr[i]);
+            }
+            return Math.min(...arr);
+            //return Math.min.apply(null,arr);            
+        }   
+        static test(x,y,z,w,r){
+            return x+y+z+w+r;
+        } // 전개연산자 test 예시
+    }
+    //전개 연산자 test 예시
+    console.log("전개연산자 test ==>", Calc.test(...arr)); // Calc.test(3,5,6,2,4)
+    console.log("Math.max.apply(null, arr ==>", Math.max.apply(null, arr));
+
+
+    console.log("Math.max(...arr) ==>",Math.max(...arr)); 
+    //전개연산자 (...arr) == (3,5,6,2,4)
+    console.log(Calc.max(arr));
+    console.log(Calc.min(arr));
+
+
+    var arr2 = [1,2,3];
+    var arr3 = [4,5,6];
+    //[1,2,3,4,5,6]
+    arr2.push(...arr3);
+
+    console.log("arr2 == > ",arr2);
+</script>

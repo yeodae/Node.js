@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [3,5,6,2,9,8];
+
+    // function numFunction(num){
+    //     return num >= 5;
+    // } //익명함수로 처리해서 주석처리
+
+    function numFilter(arr, callback){
+        //[5,6,9,8]
+        var resultArr = [];
+        for(var i=0; i<arr.length; i++){
+            if(callback(arr[i])){
+                resultArr.push(arr[i]);
+            }
+        }
+        return resultArr;
+    }
+
+    var newArr = numFilter(arr, (num)=> num >= 5);
+    var newArr2 = numFilter(arr, (num)=> num >= 3);
+    var newArr3 = numFilter(arr, str => str.length >= 5);
+
+    console.log(newArr);
+    console.log(newArr2);
+    console.log(newArr3);
+</script>

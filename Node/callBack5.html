@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [3,5,6,2,9,8];
+
+    function max(arr){
+        var num = 0;
+        num = Math.max(...arr);
+        return num;
+    }
+
+    function sum(arr){
+        // var num = 0;
+        // for(var i=0; i<arr.length; i++){
+        //     num += arr[i];
+        // }
+        //return num;
+        return arr.reduce((v1, v2) => v1 + v2);
+    }
+    function avg(arr){
+        var num = 0;
+        for(var i=0; i<arr.length; i++){
+            num += arr[i];
+        }
+        return num / arr.length;
+    }
+
+    function numFunc(arr,str,callsum,callavg,callmax){
+        var num = 0;
+        for(var i=0; i<arr.length; i++){
+            if(str == "sum"){
+                num = callsum(arr);
+            }
+            else if(str == "avg"){
+                num = callavg(arr);
+            }
+            else if(str == "max"){
+                num = callmax(arr);
+            }
+        }
+        return num;
+    }
+
+    var max = numFunc(arr, "max", sum, avg, max);
+    var num = numFunc(arr, "sum", sum, avg, max);
+    var num2 = numFunc(arr, "avg", sum, avg, max);
+
+    console.log(max);
+    console.log("sum==>",num);
+    console.log("avg==>",num2);
+    
+</script>

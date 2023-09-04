@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = ["javascript", "oracle", "html/css", "java", "spring"];
+    
+function sampleFilter(arr, callback){
+    //arr에서 크기가 7이상인 요소들의 배열을 리턴
+    var resultArr = [];
+    // push
+    for(var i=0; i<arr.length; i++){
+        if(callback(arr[i])){
+            resultArr.push(arr[i]);
+        }        
+    }
+    return resultArr;
+}
+
+    var newArr = sampleFilter(arr, element => element.length > 6);
+    console.log(newArr);
+    
+</script>

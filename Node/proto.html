@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let human = { // human 맵 생성
+        //name, age
+        name : "홍길동",
+        age : 30,
+        run(){
+            alert("홍길동이 뛴다");
+        }
+    } // map
+    let student = {
+        //grade 
+        grade : 3
+    }
+    
+    console.log(human);
+    console.log(student);
+    student.__proto__ = human;
+    console.log(student.age);
+    console.log(student.name);
+    human.run();
+
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [3,5,6,2,9,8];
+    var sum = arr.reduce((v1, v2) => v1 + v2);
+
+    var sum = 0;
+    for(var i=0; i<arr.length; i++){
+        sum = sumFnc(sum, arr[i]);
+    }
+    function sumFnc(v1,v2){
+         return v1 + v2;
+     }
+
+    function newReduce(arr, callback){
+        var sum = arr[0];
+        for(var i=1; i<arr.length; i++){
+            // sum += arr[i]
+            //sum = sum + arr[i]
+            sum = callback(sum, arr[i]);
+        }
+        return sum;
+    }
+
+    var sum2 = newReduce(arr, (v1, v2) => v1 + v2);
+    var mul = newReduce(arr, (v1, v2) => v1 * v2);
+    var avg = newReduce(arr, (v1, v2) => v1 + v2) / arr.length;
+    // sum2 = 33;
+
+    console.log(arr);
+    console.log("reduce(v1,v2) == > ",sum);
+    console.log("newReduce == >",sum2);
+    console.log(mul);
+    console.log(avg);
+</script>

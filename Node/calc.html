@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //계산기 클래스
+    //add(x,y), sub(x,y)
+    //호출결과 화면에 출력
+    var name = "mul";
+
+    class Calc{
+        add(x,y){
+            return x+y;        
+        }
+        sub(x,y){
+            return x-y;
+        }
+        [name]({x,y}){
+            return x*y;
+        }
+    }
+
+    var calc = new Calc();
+    var obj = document.getElementById("calc");
+    //obj.innerHTML = calc.add(2,3);
+    obj.innerHTML = calc.mul({x : 3, y : 4});
+
+    console.log(calc.sub(3,4));
+    console.log(calc.add(4,6));
+</script>
+<body>
+    
+    <div id="calc"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id=""></div>
+</body>
+</html>
+<script>
+    class Animal{
+        name = "";
+        constructor(age){
+            this.age = age;
+        }
+
+        get getName(){
+            return this.name;
+        }
+        set setName(name){
+            this.name = name;
+        }
+
+        static max (x,y){
+            //if(x > y){
+            //    return x;
+            //}else{
+            //    return y;
+            //}
+            return x > y ? x : y;
+        }
+    }
+    let animal = new Animal(3);
+    animal.setName = "뽀삐"; // set
+    animal.getName; // get
+    console.log(animal.getName);
+
+    var num = Math.max(1,2);
+
+    console.log(num);
+    console.log(Animal.max(1,2)); // js에서는 클래스명으로 접근해야한다.
+</script>

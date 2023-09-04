@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hong">
+       <p id="hongObj"></p>
+       
+    </div>
+</body>
+</html>
+<script>
+    //const name = ""; 상수화 (변경불가)
+    class Person{
+        phone = "010-7239-7113";
+       //변수생략↓↓↓↓↓↓↓ name = ""; 변수타입 생략(var)
+        constructor(name, age){//생성자 생성 : constructor
+            this.name = name; // 위에서 변수선언을 안해도 할당이됨 ->변수선언 생략가능 
+            this.age = age; // age 변수 할당
+        }
+        run(speed){
+            // ooo은 oo의 속도로 뛰고있다.
+            return `${this.name}은 ${speed}의 속도로 뛰고있다`;
+        }
+    }
+    // 20살 홍길동 => hong
+    let hong = new person("홍길동","20"); // var,let 변수타입 지정 
+    // (자바와 달리 클래스명을 안붙여도 된다.)
+    let hongObj = document.getElementById("hong");
+    //document.querySelector();
+
+    //hongObj.innerHTML = "이름 : " +hong.name + " 나이 : " + hong.age;
+    //hongObj.innerHTML = `이름 : ${hong.name}, 나이 : ${hong.age}`; // 백팅
+    hongObj.innerHTML = hong.run(30);
+
+    // 30살 김철수 => kim
+    let kim = new person("김철수",30); // var,let 변수타입 지정 
+    let kimObj = document.getElementById
+
+</script>

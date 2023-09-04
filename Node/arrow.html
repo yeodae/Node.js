@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function add(x,y){
+        return x+y;
+    }
+    var add2 = (x,y) =>{
+        return x+y;
+    }
+    var add3 = (x,y) =>(x+y); // 여러 값이 존재할경우
+    
+    var add4 = (x,y) =>x+y; // 괄호 생략가능(react)
+    
+    console.log(add4(1,2)); // 3
+    console.log(!1); // false
+    console.log(!0); // true
+</script>

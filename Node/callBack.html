@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">test</div>
+    <button onclick="color()">클릭</button>
+</body>
+</html>
+<script>
+    function color(){
+        var obj = document.getElementById("test");
+        obj.style.color = "red";
+        //obj.setAttribute("style","color : red");
+    }
+
+
+    function sum(x,y, callback){
+        callback(x+y);
+    }
+    // function result(v){
+    //     console.log(v); // 7 출력
+    // }
+    sum(3,4,function(v){ // result 함수명 생략가능(익명함수=익명클래스)
+        console.log(v); // 7 출력
+    });
+
+   
+</script>

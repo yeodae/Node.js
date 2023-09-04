@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Human{
+        constructor(name, age, addr){ // 생성자(객체생성)  
+            this.name = name; //변수
+            this.age = age;
+            this.addr = addr;            
+        }
+        intro(){
+            return `이름 : ${this.name}, 나이 : ${this.age}, 주소 : ${this.addr}`;
+        }
+    }
+    class Student extends Human{ // 상속
+        constructor(name, age, addr, grade){ // 생성자(객체생성)
+            super(name, age, addr);
+            this.grade = grade; 
+        }
+        intro(){ // 오버라이딩 
+            return super.intro() + ", 학년 : " + this.grade;
+        }
+    }
+    var student = new Student("여대현","30살","제주도","3학년");
+    console.log(student.intro());
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = ["javascript", "oracle", "html/css", "java", "spring"];
+    // function callback(element){ 
+    //     return element.length > 5; 
+
+        //if 생략 가능
+        // if(element.length>5){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    //}
+    var newArr = arr.filter(function callback(element){ 
+        return element.length > 5; });
+        //익명함수 처리
+
+    var newArr2 = arr.filter(element => element.length >6);
+    //화살표,익명 함수사용
+    console.log(newArr);
+    console.log(newArr2);
+</script>

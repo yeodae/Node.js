@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var num = 0;
+    //num + 10 함수 생성
+    // function plus(){
+    //     return num + 10;
+    // } == () => {num + 10}; 화살표함수
+    
+    //2초 뒤 num + 10 함수실행
+    function add1(num, callback){
+        setTimeout(() => callback(num + 10), 500);
+    }
+    function add2(num, callback){
+        setTimeout(() => callback(num + 20), 1000);
+    }
+    function add3(num, callback){
+        setTimeout(() => callback(num + 30), 2000);
+    }
+
+    add1(100,num => {
+        add2(num, num2 =>{
+            add3(num2, num3 =>{console.log(num3)})
+        })
+    });
+    console.log(num); 
+    
+    
+</script>

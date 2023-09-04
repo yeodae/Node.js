@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//Animal 클래스
+//name , age 값 받아서 초기화
+
+class Animal{    
+    constructor(name, age){ //생성자 생성
+        this.name = name;
+        this.age = age;
+    }
+    info(){
+        return `이름은 ${this.name}, 나이는 ${this.age}`;
+    }
+}
+class Dog extends Animal{
+    #sound = "멍멍";
+    constructor(name, age, kind){ // 생성자 생성
+        super(name,age); // 부모클래스 소환
+        this.kind = kind;
+    }
+    info(){ // 부모클래스 메서드 오버라이딩(재정의)
+        // 이름 : 뽀삐, 나이 : 3살 , 견종 : 비숑 
+        return super.info() + "살, 견종은 " + this.kind + ", 소리는 "
+        +this.#sound;// # == private : 외부접근 불가
+
+    }
+
+    get getSound(){
+        return this.#sound;
+    }
+}
+var dog = new Dog("시저", "5", "비숑");
+console.log(dog.info());
+
+
+console.log("getSound ==>",dog.getSound);
+</script>

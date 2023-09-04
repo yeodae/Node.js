@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [-3, 5, 2, -4, 1];
+
+    class Calculator{
+        static #sum = 0;
+        static sub(arr){
+            // var max = arr[0];
+            // var min = arr[0];
+            // for(var i = 1; i<arr.length; i++){
+            //     if(arr[i] > max){
+            //         max = Math.max(arr[i]);
+            //     }else if( arr[i] < min){
+            //         min = Math.min(arr[i]);
+            //     }                            
+            // }
+            var max = Math.max(...arr);
+            var min = Math.min(...arr);
+            return max - min;
+        }
+
+        // set setsum(arr){
+        //     return this.#sum
+        // }
+        static sum(arr){
+            // var value = arr[0];
+            // for(var i=1; i<arr.length; i++){
+            //     value += arr[i];
+            // }
+            arr.forEach(num => { // 배열을 순차적 접근
+                this.#sum += num;
+            });
+        }
+        
+        static get getSum(){
+            return this.#sum;            
+        }
+    }
+    
+    console.log("sub==>",Calculator.sub(arr)); // 9 
+    Calculator.sum(arr);
+    console.log("sum==>",Calculator.getSum); // 1 
+
+</script>

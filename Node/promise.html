@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var flg = true;
+    var pObject = new Promise((resolve,reject) => {
+        if(flg){
+            resolve("성공!!");
+        }else{
+            reject("실패!!");
+        }
+    });
+
+    //then, catch, finally
+    pObject
+        .then(message => {console.log(message);}) // resolve함수가 성공했을때
+        .catch(error => {console.log(error);}) // reject 함수가 실패시
+        .finally(() => console.log("종료")) // 성공or실패 무조건 실행(많이안쓰임)
+</script>
