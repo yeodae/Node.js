@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//     var num = 0;
+// function promiseAdd(num){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(() => {resolve(num + 900)}, 500);
+//     });
+// }
+// function promiseAdd2(num){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(() => {resolve(num + 9000)}, 500);
+//     });
+// }
+// function promiseAdd3(num){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(() => {resolve(num + 90000)}, 500);
+//     });
+// }
+
+// promiseAdd(100)
+//     .then(num =>{
+//         console.log(num);
+//         return promiseAdd2(num);
+//     })
+//     .then(num =>{
+//         console.log(num);
+//         return promiseAdd3(num);
+//     })
+//     .then (num =>{
+//         console.log(num);
+//     })
+
+function add1(num, time){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{resolve(num)}, time);
+    });
+}
+add1(100,500)
+    .then(data => {return add1(data+10, 500)}) //110
+    .then(data => {return add1(data+20, 500)}) //130
+    .then(data => {console.log(data+30)}) //160
+</script>
